@@ -1,4 +1,4 @@
-
+//import { parse } from 'url';
 
 'use strict';
 
@@ -8,16 +8,20 @@ const app = express();
 
 //output hello world
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!');
+  res.status(200).send('Hello, world! 411');
 });
 // [END hello_world]
 
 // POST method route
 app.post('/', function (req, res) {
-  var myObj = JSON.parse(req.body);
-  var myJSONstring = JSON.stringify(myObj);
-  res.send(myJSONstring)
-})
+ 
+  // var myObj = JSON.parse(req.body);
+  var myObj = req.body;
+  //var myJSONstring = parse(myObj);
+  res.send("hello ")
+  //res.send("hello" + myJSONstring)
+
+});
 
 if (module === require.main) {
   // [START server]
