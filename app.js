@@ -15,7 +15,8 @@ app.get('/', (req, res) => {
 // POST method route
 app.post('/', function (req, res) {
   var myObj = JSON.parse(req.body);
-  res.send(myObj)
+  var myJSONstring = JSON.stringify(myObj);
+  res.send(myJSONstring)
 })
 
 if (module === require.main) {
