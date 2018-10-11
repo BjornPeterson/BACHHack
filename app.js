@@ -10,15 +10,16 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-  res.status(200).send('letggddddggs , !s');
+  res.status(200).send('Valid');
 });
 
    //Demo wallet balances
     //2NGZRVn1btCG4Xxd9esSnFXiHAP6DrBL4yW :: MERCHANT (temp) ////  / prlmhl94mpr74yuang0azmkyj8xknwr9gg7rtl58dj
     //2MuFZLfZLMTPDqzRRkU4va36EwqW1VubAnC :: CONSUMER (michaelTest) //// pqtqqe7ztzxfj8yv7ys8m6464xd9755cv5nccg8e6z / prypsl76p0n2rzut7f59p8akmy3eqkn7qs954a3vy8 / pqprlhsyhp6uq0ap448q0tdu372nry48v587q28chr
     //2NFWQDTX7KixEmgQm2DZvBVtZ4UrZdrGzQU :: COMMUNITY (MiketBTC) //// pr6rrze6y6h5gfu9lh4s3d5n22h59jau8va5vv9p0c 
+    //1PGqXLQ5urNvKMchHLPLzBANPUiQrLg4mG :: COPAY (MiketBTC) ////  qr69rqh65suhq35zrwwg8kecls4q0m2g6vrdt4ec37
+    
  // POST method route
-
 
 app.post('/', function (req, res) {
   //let mike = 0;   
@@ -34,11 +35,10 @@ app.post('/', function (req, res) {
       //mike = 0;
     //}, delayInMilliseconds);  
 
-
-
   }
   //res.status(200).send
-  res.send('Success 1')
+  //res.send('Success 1')
+  res.status(200).send('Valid')
  //res.json(req.body['addresses'])
 
 })
@@ -64,7 +64,7 @@ client.initWallet("temp", "temp12345678", function(err, wallet) {
   client.initWallet("michaelTest", "Br!nk123", function(err, wallet) { 
     //Initiate transaction
         var value = blocktrail.toSatoshi(rebate);
-        wallet.pay({'2NFWQDTX7KixEmgQm2DZvBVtZ4UrZdrGzQU' : value}, //sending to CONSUMER wallet
+        wallet.pay({'2MuFZLfZLMTPDqzRRkU4va36EwqW1VubAnC' : value}, //sending to wallet
             function(err, result) {
                 console.log(result);
                 console.log(err);
