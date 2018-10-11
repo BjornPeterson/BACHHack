@@ -61,7 +61,7 @@ client.initWallet("temp", "temp12345678", function(err, wallet) {
   wallet.transactions(function(err, result) {
   rebate = sat2BCH(result.data[0]['wallet_value_change']*0.1);
 
-  client.initWallet("michaelTest", "Br!nk123", function(err, wallet) { 
+  client.initWallet("MiketBTC", "Br!nk123", function(err, wallet) { 
     //Initiate transaction
         var value = blocktrail.toSatoshi(rebate);
         wallet.pay({'2MuFZLfZLMTPDqzRRkU4va36EwqW1VubAnC' : value}, //sending to wallet
