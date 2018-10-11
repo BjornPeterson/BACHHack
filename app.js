@@ -1,29 +1,30 @@
-//import { parse } from 'url';
 
 'use strict';
-
-const express = require('express');
-
-const app = express();
-
-//output hello world
+ const express = require('express');
+ const app = express();
+ //output hello world
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, world! 411');
+  res.status(200).send('Hello, sss!s');
 });
 // [END hello_world]
-
-// POST method route
+ // POST method route
 app.post('/', function (req, res) {
- 
-  // var myObj = JSON.parse(req.body);
-  var myObj = req.body;
-  //var myJSONstring = parse(myObj);
-  res.send("hello ")
-  //res.send("hello" + myJSONstring)
+  //var myObj = JSON.parse(req.body);
+  //res.send(myObj)
+  var myObj = JSON.parse(req);
+  var myJSON = myObj;
+  var myJSONstring = JSON.stringify(myJSON);
+  res.send('string' + myJSONstring)
 
-});
+ // var myObj = JSON.parse(req.body);
+   //var myObj = req.network;
+   //var myJSONstring = JSON.stringify(myObj);
+   //res.send('string' + myJSONstring)
+ //res.send("hello" + myJSONstring)
+ //req.body.network
 
-if (module === require.main) {
+})
+ if (module === require.main) {
   // [START server]
   // Start the server
   const server = app.listen(process.env.PORT || 8080, () => {
@@ -32,5 +33,4 @@ if (module === require.main) {
   });
   // [END server]
 }
-
-module.exports = app;
+ module.exports = app;
